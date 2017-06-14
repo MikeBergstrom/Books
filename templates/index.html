@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Books</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+ <table id="booklist">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date Added</th>
+            <th>Action</th>
+        </tr>
+        {% for book in all_books: %}
+        <tr>
+            <td>{{book['title']}}</td>
+            <td>{{book['author']}}</td>
+            <td>{{book['created']}}</td>
+            <td><a href="http://localhost:5000/confirm/{{book['id']}}">Delete</a>    <a href="http://localhost:5000/change/{{book['id']}}">Update</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="http://localhost:5000/add">Add a Book</a>
+</body>
+</html>
