@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Add a Book</title>
+    <title>Books</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <form action="insert" method='POST'>
-        Title <input type="text" name="title">
-        Author <input type= "text" name="author">
-        <input type="submit" value="Add Book!">
-    </form>
+    <h1>Quotes from {{book[0]['title']}}</h1>
+    {% for quote in quote_list: %}
+    " {{quote['quote']}} "
+    {% endfor %}
+<form action='/'>
+    <input type="submit" value="Back to Books">
+</form>
 </body>

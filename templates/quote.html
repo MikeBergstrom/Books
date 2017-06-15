@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Books</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Add a Quote</h1>
+    <h2>For {{book[0]['title']}}</h2>
+    <form action="/postquote" method="POST">
+        Quote: <textarea rows="10" cols="50" name="quote">
+            </textarea>
+        <input type="hidden" name="id" value="{{book[0]['id']}}">
+        <input type="submit" name="submit" value="Go Back">
+        <input type="submit" name="submit" value="Add Quote">
+    </form>
+</body>

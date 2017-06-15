@@ -17,10 +17,10 @@
         </tr>
         {% for book in all_books: %}
         <tr>
-            <td>{{book['title']}}</td>
+            <td><a href="http://localhost:5000/quotes/{{book['id']}}"> {{book['title']}} </a></td>
             <td>{{book['author']}}</td>
             <td>{{book['created']}}</td>
-            <td><a href="http://localhost:5000/confirm/{{book['id']}}">Delete</a>    <a href="http://localhost:5000/change/{{book['id']}}">Update</a></td>
+            <td><a href="http://localhost:5000/confirm/{{book['id']}}">Delete</a>    <a href="http://localhost:5000/quote/{{book['id']}}">Add Quote</a></td>
         </tr>
         {% endfor %}
     </table>
